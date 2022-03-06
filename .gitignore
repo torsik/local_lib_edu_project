@@ -1,0 +1,5 @@
+*.rus
+__pycache__
+web
+db.sqlite3
+.DS_Store

@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1>Our news</h1>
+    {% for newspost in newspost_list %}
+        <h2>
+            <a href="{{ newspost.get_absolute_url }}">{{ newspost.title }}</a>
+        </h2>
+        <p class="date">Published {{ newspost.publish }} by {{ newspost.author }}</p>
+        {{ newspost.body|truncatewords:20|linebreaks }}
+    {% endfor %}
+{% endblock %}
