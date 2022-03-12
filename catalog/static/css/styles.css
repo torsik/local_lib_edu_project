@@ -3,3 +3,21 @@
     padding: 0;
     list-style: none;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li img {
+  width: 32px;
+  height: 32px;
+}
+
+h1 {
+    color: #FCA205;
+}
