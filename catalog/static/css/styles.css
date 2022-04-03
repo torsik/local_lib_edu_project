@@ -1,23 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    max-width: 10800px;
+}
+
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
     list-style: none;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+.exit {
+  height: 80px;
+  padding-bottom: 50px;
 }
 
-footer ul {
+.exit ul {
   list-style: none;
 }
 
-footer li img {
-  width: 32px;
-  height: 32px;
+.exit li img {
+    width: 320px;
+    height: 32px;
+    list-style: none;
 }
 
 h1 {
     color: #FCA205;
 }
+
+
+.exit p {
+  color: #fff;
+  font-size: 14px;
+  height: 80px;
+  line-height: 80px;
+  margin: 0;
+}
+
+
+

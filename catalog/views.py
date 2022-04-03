@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import AuthorsForm, CommentForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from taggit.models import Tag
 
 # Create your views here.
 
@@ -97,9 +98,7 @@ class NewsPostListView(generic.ListView):
     model = NewsPost
     paginate_by = 5
 
-'''class NewsPostDetailView(generic.DetailView):
-    model = NewsPost
-
+'''
 def news_list(request):
     posts = NewsPost.objects.all()
     return render(request, 'catalog/news_list.html', {'posts': posts})'''

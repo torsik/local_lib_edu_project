@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date
 from django.utils import timezone
+from taggit.managers import TaggableManager
 
 
 # Create your models here.
@@ -117,6 +118,7 @@ class NewsPost(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_NEWS, default='draft')
+    tags = TaggableManager()
 
     class Meta:
         ordering = ('-publish',)
