@@ -3,11 +3,12 @@
 {% block content %}
 
     <h1>Our news</h1>
-    {% for newspost in newspost_list %}
+    {% for post in posts %}
         <h2>
-            <a href="{{ newspost.get_absolute_url }}">{{ newspost.title }}</a>
+            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
         </h2>
-        <p class="date">Published {{ newspost.publish }} by {{ newspost.author }}</p>
-        {{ newspost.body|truncatewords:20|linebreaks }}
+        <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
+        {{ post.body|truncatewords:20|linebreaks }}
     {% endfor %}
+    {% include "catalog/pagination.html" with page=posts %}
 {% endblock %}

@@ -7,6 +7,7 @@ from .forms import AuthorsForm, CommentForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from taggit.models import Tag
+from django.core.paginator import  Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
@@ -94,14 +95,23 @@ class BookDelete(DeleteView):
     model = Book
     success_url = reverse_lazy('books')
 
-class NewsPostListView(generic.ListView):
+'''class NewsPostListView(generic.ListView):
     model = NewsPost
-    paginate_by = 5
+    paginate_by = 5'''
 
-'''
+
 def news_list(request):
     posts = NewsPost.objects.all()
-    return render(request, 'catalog/news_list.html', {'posts': posts})'''
+    paginator = Paginator(posts, 3)
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    return render(request, 'catalog/newspost_list.html', {'page': page, 'posts': posts})
 
 def news_detail(request, year, month, day, newspost):
     newspost = get_object_or_404(NewsPost, slug=newspost, status='published',

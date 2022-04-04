@@ -36,6 +36,6 @@ urlpatterns = [
     re_path(r'^book/update/(?P<pk>\d+)$', views.BookUpdate.as_view(), name='book_update'),
     re_path(r'^book/delete/(?P<pk>\d+)$', views.BookDelete.as_view(), name='book_delete'),
     #re_path(r'^new/(?P<pk>\d+)$', views.NewsPostDetailView.as_view(), name='newspost_detail'),
-    re_path(r'^news/$', views.NewsPostListView.as_view(), name='news_list'),
-
+    #re_path(r'^news/$', views.NewsPostListView.as_view(), name='news_list'),
+    path('news/', views.news_list, name='news_list')
 ]
