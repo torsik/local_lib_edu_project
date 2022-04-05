@@ -100,8 +100,14 @@ class BookDelete(DeleteView):
     paginate_by = 5'''
 
 
-def news_list(request):
+def news_list(request, tag_slug=None):
     posts = NewsPost.objects.all()
+    tag = None
+
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        posts = posts.filter(tags__in=[tag])
+
     paginator = Paginator(posts, 3)
     page = request.GET.get('page')
     try:
@@ -111,7 +117,7 @@ def news_list(request):
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
 
-    return render(request, 'catalog/newspost_list.html', {'page': page, 'posts': posts})
+    return render(request, 'catalog/newspost_list.html', {'page': page, 'posts': posts, 'tag': tag})
 
 def news_detail(request, year, month, day, newspost):
     newspost = get_object_or_404(NewsPost, slug=newspost, status='published',
