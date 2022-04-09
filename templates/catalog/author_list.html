@@ -3,11 +3,21 @@
 {% block content %}
     <h1>List of authors</h1>
     {% if author_list %}
+        <table id="authors">
+           <tr>
+               <th>First Name</th>
+               <th>Last name</th>
+               <th>Date of birth</th>
+               <th>Date of death</th>
+           </tr>
         {% for author in author_list.all %}
-            <p>{{ author.first_name }}  {{ author.last_name }},
-            <strong>Date of birth: {{ author.date_of_birth }}</strong>
-            <strong>Date of death: {{ author.date_of_death }}</strong></p>
+            <tr>
+                <td>{{ author.first_name }}</td>
+                <td>{{ author.last_name }}</td>
+                <td>{{ author.date_of_birth }}</td>
+                <td>{{ author.date_of_death }}</td>
         {% endfor %}
+        </table>
     {% else %}
         <p>There are no authors in database</p>
     {% endif %}

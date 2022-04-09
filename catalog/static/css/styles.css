@@ -4,31 +4,25 @@ html, body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     width: 100%;
-    max-width: 10800px;
 }
 
-.selector-for-some-widget {
-    box-sizing: content-box;
+table {
+    width: 100%;
 }
+
+#authors table, th, td {
+    font-family: 'Calibri';
+    border-bottom: 2px solid #ddd;
+    padding: 4px;
+    text-align: left;
+}
+
+#authors tr:hover {background-color: coral;}
+
 
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
-    list-style: none;
-}
-
-.exit {
-  height: 80px;
-  padding-bottom: 50px;
-}
-
-.exit ul {
-  list-style: none;
-}
-
-.exit li img {
-    width: 320px;
-    height: 32px;
     list-style: none;
 }
 
@@ -45,5 +39,25 @@ h1 {
   margin: 0;
 }
 
+.exit {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    padding-bottom: 2px;
+}
 
+.exit ul {
+  list-style: none;
+}
 
+.exit li img {
+    width: 380px;
+    height: 30px;
+    list-style: none;
+    padding: 6px;
+    position: absolute;
+}

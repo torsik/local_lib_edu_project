@@ -2,9 +2,9 @@
 {% block content %}
 
 <h3>List of authors in DB</h3>
-    <table>
-        <thread><th>ID</th><th>------Name------</th>
-                    <th>Surname</th><th></th></thread>
+    <table id="authors">
+        <thread><th>ID</th><th>Name</th>
+                    <th>Surname</th><th>Edit / Delete</th></thread>
     {% if author %}
         {% for author in author.all %}
             <tr>
@@ -12,7 +12,7 @@
                 <td>{{ author.first_name }} </td>
                 <td>{{ author.last_name }} </td>
                 <td><a href="/edit_author/{{ author.id }}"> Edit </a>
-                    <a href="/delete/{{ author.id }}"> Delete </a></td>
+                    <a href="/delete/{{ author.id }}"> <strong>Delete</strong> </a></td>
             </tr>
         {% endfor %}
     {% else %}
