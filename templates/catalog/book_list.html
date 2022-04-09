@@ -2,18 +2,23 @@
 
 {%  block content %}
     <h1>List of books from DB</h1>
+    <table id="books_list">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
     {% if book_list %}
-    <ul>
         {% for book in book_list %}
-        <li>
-        <a href="{{ book.get_absolute_url }}"> <!-- should be book.get...??-->
-                {{ book.title }}
-                {{ book.genre }}
-            <a href="/book/update/{{ book.id }}">Edit</a>
-            <a href="/book/delete/{{ book.id }}">Delete</a>
-        </li>
+        <tr>
+            <td><a href="{{ book.get_absolute_url }}"> {{ book.title }} </td>
+            <td>{{ book.genre }}</td>
+            <td><a href="/book/update/{{ book.id }}">Edit</a></td>
+            <td><a href="/book/delete/{{ book.id }}">Delete</a></td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
     {%  else %}
         <p>Book DB is empty</p>
     {% endif %}
