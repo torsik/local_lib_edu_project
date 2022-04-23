@@ -8,6 +8,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from taggit.models import Tag
 from django.core.paginator import  Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Count
 
 # Create your views here.
 
@@ -101,7 +102,8 @@ class BookDelete(DeleteView):
 
 
 def news_list(request, tag_slug=None):
-    posts = NewsPost.objects.all()
+    #posts = NewsPost.objects.all()
+    posts = NewsPost.objects.annotate(num_comments=Count('comments')).order_by('-publish').all()
     tag = None
 
     if tag_slug:

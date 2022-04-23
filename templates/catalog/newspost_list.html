@@ -22,6 +22,7 @@
         </p>
         <p class="date">Published {{ post.publish }} by {{ post.author }}</p>
         {{ post.body|truncatewords:20|linebreaks }}
+        <p>Comments: {{ post.num_comments }}</p>
     {% endfor %}
     {% include "catalog/pagination.html" with page=posts %}
 

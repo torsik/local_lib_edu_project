@@ -3,9 +3,8 @@
 <head>
    {% block title %}<title>World of books</title>{% endblock %}
    <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=l">
-   <link rel="stylesheet"
-       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -28,8 +27,8 @@
                <li><a href={% url 'books' %}>All books</a></li>
                <li><a href={% url 'authors' %}>All authors</a></li>
                <li><a href="{% url 'authors_add' %}">Edit authors</a> </li>
-               <li><a href="{% url 'book_create' %}">Add book</li>
-               <li><a href="{% url 'news_list' %}">News</li>
+               <li><a href="{% url 'book_create' %}">Add book</a></li>
+               <li><a href="{% url 'news_list' %}">News</a></li>
                {% if user.is_authenticated %}
                     <li>User: {{ user.get_username }}</li>
                    <li><a href="{% url 'my-borrowed' %}">My borrowed books</a></li>
