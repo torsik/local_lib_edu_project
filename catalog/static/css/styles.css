@@ -70,23 +70,5 @@ h1 {
 }
 
 
-.exit p {
-  color: #fff;
-  font-size: 14px;
-  height: 60px;
-  line-height: 50px;
-  margin: 0;
-}
 
-.exit {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: orange;
-    color: white;
-    text-align: center;
-    padding-bottom: 1px;
-    height: 50px;
-}
 
