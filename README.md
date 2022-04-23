@@ -8,3 +8,4 @@ Used features on the website:
 
 The project is still in progress and available to test here: https://scvisc.pythonanywhere.com/
  
+no addaptation for Mobile devices
